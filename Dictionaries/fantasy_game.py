@@ -12,7 +12,9 @@ def addToInventory(inventory, addedItems):
     uniqueItems = dict([(x, addedItems.count(x)) if x not in inventory.keys() else (x, inventory[x] + addedItems.count(x)) for x in addedItems])
     return {**inventory, **uniqueItems}
 
-inv = {'gold coin': 42, 'rope': 1}
-dragonLoot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
-inv = addToInventory(inv, dragonLoot)
-displayInventory(inv)
+
+if __name__ == "__main__":
+    inv = {'gold coin': 42, 'rope': 1}
+    dragonLoot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
+    inv = addToInventory(inv, dragonLoot)
+    displayInventory(inv)
